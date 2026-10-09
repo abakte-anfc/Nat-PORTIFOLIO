@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/perfil.jpeg';
+import RubberSegment from '../components/ui/RubberSegment';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import MagicBento from '../components/ui/MagicBento';
+import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
+import Curves from '../components/Curves.astro';
+import { professional as p } from '../data/professional';
+import { content as c } from '../data/content';
+const nav = [{value:'sobre',label:'Sobre mim'},{value:'psicoterapia',label:'Psicoterapia'},{value:'como-funciona',label:'Como funciona'},{value:'duvidas',label:'Dúvidas'}];
+---
+<BaseLayout>
+<header class="header"><div class="container header-inner"><a class="brand" href="#inicio"><strong>{p.displayName}<span class="brand-dot">.</span></strong><span>{p.role} · CRP {p.crp}</span></a><InteractiveHoverButton className="menu-toggle" aria-expanded="false" aria-controls="menu" type="button" text="Menu"/><nav id="menu" aria-label="Navegação principal"><RubberSegment client:load items={nav} trackColor="#E9DFD5" thumbColor="#6B1B2C" textColor="#6B1B2C" activeTextColor="#FFFFFF" size="lg" equalSlots={false} draggable stretch={100} squash={3} speed={1} glide={75} aria-label="Seções do site"/><CTA/></nav></div></header>
+<main id="conteudo">
+<section id="inicio" class="hero"><div class="container hero-grid cascade"><div class="hero-copy"><p class="eyebrow">Um espaço de escuta, no seu tempo</p><p class="identification">{p.name} · {p.role} · CRP {p.crp}</p><h1>Um espaço para compreender sua história, <span>no seu tempo.</span></h1><p class="lead">Psicoterapia individual online para adultos, com atenção especial às mulheres e pessoas LGBTQIAPN+. Uma escuta que respeita sua história e a singularidade de cada processo.</p><div class="hero-actions"><CTA/><a class="text-link" href="#sobre">Conheça meu trabalho <span aria-hidden="true">↓</span></a></div><p class="small availability">Atendimento particular · Online · Mediante agendamento</p></div><div class="hero-art hero-portrait"><Image src={portrait} alt="Natália Menezes Reis, psicóloga clínica" widths={[320,480,640,800]} sizes="(max-width:650px) 300px, (max-width:900px) 35vw, 400px" width={800} height={800} format="webp" quality={85} loading="eager" fetchpriority="high"/></div></div><div class="container hero-bottom"><span>Psicoterapia individual online</span><a href="#sobre">Um primeiro passo, no seu ritmo <span aria-hidden="true">↓</span></a></div></section>
+<section id="sobre" class="section"><div class="container split cascade"><div><p class="eyebrow">01 / Sobre mim</p><h2>Oi, eu sou<br/>Natália!</h2><p class="signature">{p.displayName}</p><p class="small">{p.role}<br/>CRP {p.crp}</p></div><div class="prose">{c.about.map(t=><p>{t}</p>)}</div></div></section>
+<section id="para-quem" class="section audience"><div class="container cascade"><p class="eyebrow">02 / Para quem</p><div class="split"><h2>Um olhar atento<br/>à sua singularidade.</h2><div class="prose">{c.audience.map(t=><p>{t}</p>)}</div></div><MagicBento client:visible cards={c.themes} textAutoHide={false} enableStars enableSpotlight enableBorderGlow enableTilt enableMagnetism clickEffect spotlightRadius={150} particleCount={12} glowColor="107, 27, 44"/><p class="small theme-note">Esses são exemplos de questões que podem aparecer em psicoterapia. O atendimento não se limita a esses temas.</p><p class="closing">Você não precisa chegar com tudo organizado ou saber exatamente por onde começar. O processo pode ser construído a partir do que faz sentido para você.</p></div></section>
+<section id="psicoterapia" class="section therapy"><Curves/><div class="container split cascade"><div><p class="eyebrow">03 / Psicoterapia</p><h2>Como entendo<br/>a psicoterapia</h2><span class="therapy-star" aria-hidden="true">✳</span></div><div class="prose">{c.therapy.map(t=><p>{t}</p>)}</div></div></section>
+<section id="como-funciona" class="section"><div class="container cascade"><p class="eyebrow">04 / Como funciona</p><div class="section-heading"><h2>Um passo de cada vez.</h2><p>Os atendimentos são individuais e realizados online, mediante agendamento.</p></div><ol class="steps">{c.steps.map((s,i)=><li><span class="step-number" aria-hidden="true">0{i+1}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}</ol><CTA/></div></section>
+<section id="duvidas" class="section faq"><div class="container split cascade"><div><p class="eyebrow">05 / Dúvidas</p><h2>Antes de<br/>começar.</h2><p>Algumas perguntas sobre o atendimento.</p></div><div class="faq-list">{c.faqs.map(f=><details><summary>{f.question}<span aria-hidden="true">+</span></summary><p>{f.answer}</p></details>)}</div></div></section>
+<section id="contato" class="section contact"><Curves/><div class="container cascade"><p class="eyebrow">06 / Primeiro contato</p><h2>Vamos conversar?</h2><p class="contact-intro">Você pode me chamar para esclarecer suas dúvidas e receber as orientações para iniciar o acompanhamento.</p><CTA/><div class="contact-links"><a href={p.whatsapp}><span>WhatsApp</span>{p.phone} <b aria-hidden="true">↗</b></a><a href={p.instagramUrl}><span>Instagram</span>{p.instagram} <b aria-hidden="true">↗</b></a><a href={p.emailUrl}><span>E-mail</span>{p.email} <b aria-hidden="true">↗</b></a></div></div></section>
+</main><footer><div class="container footer-inner"><div><strong>{p.name}</strong><p>{p.role} · CRP {p.crp}<br/>Psicoterapia individual online · Atendimento particular</p></div><p>© {new Date().getFullYear()} {p.displayName}</p><a href="#inicio">Voltar ao início ↑</a></div></footer>
+<script>
+document.documentElement.classList.add('js');
+const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
+const menu = document.querySelector<HTMLElement>('#menu');
+function closeMenu(returnFocus = false) { button?.setAttribute('aria-expanded','false'); menu?.classList.remove('is-open'); if(returnFocus) button?.focus(); }
+button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true'; button.setAttribute('aria-expanded',String(!open)); menu?.classList.toggle('is-open',!open);});
+menu?.addEventListener('click',e=>{if(e.target instanceof Element && e.target.closest('a')) closeMenu();});
+menu?.addEventListener('segmentnavigate',()=>closeMenu());
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && button?.getAttribute('aria-expanded')==='true')closeMenu(true);});
+import '../scripts/section-animations';
+</script>
+</BaseLayout>

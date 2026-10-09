@@ -1,0 +1,1 @@
+export const professional = { name: 'Natália Menezes Reis', displayName: 'Natália Menezes', role: 'Psicóloga Clínica', crp: '03/35648', phone: '(75) 99706-4120', whatsapp: 'https://wa.me/5575997064120', instagram: '@psi.natmenezes', instagramUrl: 'https://www.instagram.com/psi.natmenezes/', email: 'Natreis.psi@gmail.com', emailUrl: 'mailto:Natreis.psi@gmail.com' } as const;
