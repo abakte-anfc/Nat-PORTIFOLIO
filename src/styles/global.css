@@ -33,3 +33,5 @@ main .animate__fadeInUp{animation-name:entranceFadeUp}
 main .reveal-pending{opacity:0}
 @media(prefers-reduced-motion:reduce){main .reveal-pending{opacity:1}}
 @media print{main .reveal-pending{opacity:1}main .animate__animated{animation:none!important;opacity:1!important;transform:none!important}}
+
+.contact-signature{width:min(460px,100%);margin:0 auto 32px}.contact-signature img{display:block;width:100%;height:auto}

@@ -69,3 +69,5 @@ Menu mobile: corrigido seletor CSS que escondia a navegação em ambos os estado
 Destaque desktop: a proteção do clique agora considera distância absoluta até a posição da âncora, tanto subindo quanto descendo. O acompanhamento da seção usa scroll-padding-top + scroll-margin-top reais em vez de 150px fixos. Primeira seleção e clique no item já ativo não expandem o destaque sobre outros slots. Teste scripts/verify-desktop-navigation.mjs reproduziu a troca indevida no código anterior e passou após a correção: navegação ascendente/descendente, chegada na âncora, rolagem manual, expiração do bloqueio e seleção inicial/repetida. Revisão visual real ainda depende de navegador disponível.
 
 Favicon: public/favicon.svg, monograma NM vetorial em vinho sobre creme com cantos arredondados. Referenciado no BaseLayout; funciona sem fontes ou dependências externas.
+
+Assinatura original recebida em image/Assinatura.png e integrada na seção 6 (Primeiro contato), com versões WebP responsivas e dimensões reservadas. Mantém os textos e CTAs; substitui a pendência de marca original para esse uso.

@@ -29,8 +29,8 @@ Se houver divergência factual, preservar o dado explícito do briefing e sinali
 | Modalidade | Psicoterapia individual online |
 | Público | Adultos, com atenção especial às mulheres e pessoas LGBTQIAPN+ |
 | Forma de atendimento | Particular, mediante agendamento |
-| WhatsApp exibido | (75) 99706-4120 |
-| WhatsApp normalizado | 5575997064120 |
+| WhatsApp exibido | (75) 8863-4101 |
+| WhatsApp normalizado | 557588634101 |
 | Instagram | @psi.natmenezes |
 | E-mail | Natreis.psi@gmail.com |
 | CTA principal | Vamos conversar? |
@@ -91,11 +91,11 @@ Ordem: cabeçalho → `#inicio` → `#sobre` → `#para-quem` → `#psicoterapia
 
 ## Links e ações
 
-Usar `https://wa.me/5575997064120` como destino de todos os CTAs principais. A mensagem preenchida é opcional e, se usada, deve ser neutra:
+Usar `https://wa.me/557588634101` como destino de todos os CTAs principais. A mensagem preenchida é opcional e, se usada, deve ser neutra:
 
 ```ts
 const message = 'Olá, Natália! Gostaria de saber mais sobre o atendimento online.';
-const whatsappUrl = `https://wa.me/5575997064120?text=${encodeURIComponent(message)}`;
+const whatsappUrl = `https://wa.me/557588634101?text=${encodeURIComponent(message)}`;
 ```
 
 Não enviar a mensagem automaticamente. O link apenas abre o canal; o visitante decide enviá-la. Não inserir sintomas, identificadores ou dados pessoais no texto/URL.

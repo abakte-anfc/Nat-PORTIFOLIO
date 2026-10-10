@@ -167,7 +167,7 @@ Os atendimentos são particulares.
 Título proposto: “Vamos conversar?”
 Texto proposto: “Você pode me chamar para esclarecer suas dúvidas e receber as orientações para iniciar o acompanhamento.”
 
-- WhatsApp: **(75) 99706-4120** — `https://wa.me/5575997064120`.
+- WhatsApp: **(75) 8863-4101** — `https://wa.me/557588634101`.
 - Instagram: **@psi.natmenezes** — `https://www.instagram.com/psi.natmenezes/`.
 - E-mail: **Natreis.psi@gmail.com** — `mailto:Natreis.psi@gmail.com`.
 - Rodapé: “Natália Menezes Reis · Psicóloga Clínica · CRP 03/35648”.

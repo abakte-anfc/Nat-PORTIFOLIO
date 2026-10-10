@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import portrait from '../assets/perfil.jpeg';
+import signature from '../assets/assinatura.png';
 import RubberSegment from '../components/ui/RubberSegment';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTA from '../components/CTA.astro';
@@ -20,7 +21,7 @@ const nav = [{value:'sobre',label:'Sobre mim'},{value:'psicoterapia',label:'Psic
 <section id="psicoterapia" class="section therapy"><Curves/><div class="container split cascade"><div><p class="eyebrow">03 / Psicoterapia</p><h2>Como entendo<br/>a psicoterapia</h2><span class="therapy-star" aria-hidden="true">✳</span></div><div class="prose">{c.therapy.map(t=><p>{t}</p>)}</div></div></section>
 <section id="como-funciona" class="section"><div class="container cascade"><p class="eyebrow">04 / Como funciona</p><div class="section-heading"><h2>Um passo de cada vez.</h2><p>Os atendimentos são individuais e realizados online, mediante agendamento.</p></div><ol class="steps">{c.steps.map((s,i)=><li><span class="step-number" aria-hidden="true">0{i+1}</span><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}</ol><CTA/></div></section>
 <section id="duvidas" class="section faq"><div class="container split cascade"><div><p class="eyebrow">05 / Dúvidas</p><h2>Antes de<br/>começar.</h2><p>Algumas perguntas sobre o atendimento.</p></div><div class="faq-list">{c.faqs.map(f=><details><summary>{f.question}<span aria-hidden="true">+</span></summary><p>{f.answer}</p></details>)}</div></div></section>
-<section id="contato" class="section contact"><Curves/><div class="container cascade"><p class="eyebrow">06 / Primeiro contato</p><h2>Vamos conversar?</h2><p class="contact-intro">Você pode me chamar para esclarecer suas dúvidas e receber as orientações para iniciar o acompanhamento.</p><CTA/><div class="contact-links"><a href={p.whatsapp}><span>WhatsApp</span>{p.phone} <b aria-hidden="true">↗</b></a><a href={p.instagramUrl}><span>Instagram</span>{p.instagram} <b aria-hidden="true">↗</b></a><a href={p.emailUrl}><span>E-mail</span>{p.email} <b aria-hidden="true">↗</b></a></div></div></section>
+<section id="contato" class="section contact"><Curves/><div class="container cascade"><p class="eyebrow">06 / Primeiro contato</p><div class="contact-signature"><Image src={signature} alt="Natália Menezes — Psicóloga — CRP 03/35648" widths={[360,600,900]} sizes="(max-width:650px) calc(100vw - 48px), 460px" width={900} format="webp" quality={90} loading="lazy"/></div><h2>Vamos conversar?</h2><p class="contact-intro">Você pode me chamar para esclarecer suas dúvidas e receber as orientações para iniciar o acompanhamento.</p><CTA/><div class="contact-links"><a href={p.whatsapp}><span>WhatsApp</span>{p.phone} <b aria-hidden="true">↗</b></a><a href={p.instagramUrl}><span>Instagram</span>{p.instagram} <b aria-hidden="true">↗</b></a><a href={p.emailUrl}><span>E-mail</span>{p.email} <b aria-hidden="true">↗</b></a></div></div></section>
 </main><footer><div class="container footer-inner"><div><strong>{p.name}</strong><p>{p.role} · CRP {p.crp}<br/>Psicoterapia individual online · Atendimento particular</p></div><p>© {new Date().getFullYear()} {p.displayName}</p><a href="#inicio">Voltar ao início ↑</a></div></footer>
 <script>
 document.documentElement.classList.add('js');
