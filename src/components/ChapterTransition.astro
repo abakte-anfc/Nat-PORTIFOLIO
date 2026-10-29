@@ -1,0 +1,11 @@
+---
+interface Props { number: string; title: string; from: string; to: string }
+const { number, title, from, to } = Astro.props;
+---
+<div class="chapter-transition" data-tear-scene aria-hidden="true" style={`--sheet-color:${from};--reveal-color:${to};--reveal-ink:#6B1B2C`}>
+  <div class="tear-stage">
+    <div class="tear-underlay"><span class="transition-orbit"></span><span class="transition-number">{number}</span><span class="transition-star">✧</span><span class="transition-title">{title}</span><span class="transition-line"></span><span class="transition-note">UM ESPAÇO DE ESCUTA, NO SEU TEMPO</span></div>
+    <div class="tear-sheet tear-sheet-top"><span class="sheet-ring"></span><span class="sheet-label">NATÁLIA MENEZES · PSICOLOGIA</span><span class="sheet-flower">❋</span></div>
+    <div class="tear-sheet tear-sheet-bottom"><span class="sheet-instruction">CONTINUE ROLANDO <span>↓</span></span><span class="sheet-flower">✧</span></div><div class="tear-thread"></div>
+  </div>
+</div>

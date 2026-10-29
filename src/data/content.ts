@@ -59,6 +59,7 @@ export const content = {
     "Autoconhecimento",
     "Relacionamentos",
     "Questões profissionais",
+    "Sofrimento relacionado ao trabalho",
     "Autoestima",
     "Sofrimento emocional"
   ]
